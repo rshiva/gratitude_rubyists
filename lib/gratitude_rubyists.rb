@@ -16,4 +16,7 @@ File.open(gem_file_path).read.each_line do |i|
   end
 end
 
+# Rails.application.config.action_mailer[:perform_deliveries]
+class GratitudeMail < ActionMailer::Base
+end
 end
