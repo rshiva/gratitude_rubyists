@@ -10,8 +10,7 @@ File.open(gem_file_path).read.each_line do |i|
 	  gem_name=i.to_s.split(",").first
 	  gem_name=eval gem_name
 	  author_email_id=Gem::Specification.find_by_name(gem_name).email
-	  author_name=Gem::Specification.find_by_name(gem_name).names
-    puts "===>",author_email_id
+	  author_name=Gem::Specification.find_by_name(gem_name).name
   elsif i.start_with?("#")
   	next
   end
@@ -24,9 +23,8 @@ class GratitudeMail < ActionMailer::Base
 		@to = author_email_id if author_email_id
 		@from =  ActionMailer::Base.smtp_settings[:user_name]
 		@author_name =  author_name if author_name
-		@subject    = " Hey #{@author_name} ,Thanks for this awesome gem "
-		puts "===>",@to,@from,@subject
-#		mail(:to => @to ,:from => ,:subject => @subject)
+		@subject    = " Hey ,Thanks for this awesome gem "
+		mail(:to => @to ,:from => @from ,:subject => @subject).deliver
 		
 	end
 

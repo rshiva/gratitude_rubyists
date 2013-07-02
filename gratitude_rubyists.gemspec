@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = GratitudeRubyists::VERSION
   gem.authors       = ["shiva"]
   gem.email         = ["nadarshiva.r@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Sending Gratitude Mail to the rubyists}
+  gem.summary       = %q{Simple gem for sending Gratitude mail to the list rubyists who's gem your using in your application }
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
