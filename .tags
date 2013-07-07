@@ -1,0 +1,13 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+GratitudeMail	lib/mailer/mailer.rb	/^class GratitudeMail < ActionMailer::Base$/;"	c
+GratitudeRubyists	lib/gratitude_rubyists/gratitude_rubyists.rb	/^module GratitudeRubyists$/;"	m
+GratitudeRubyists	lib/gratitude_rubyists/version.rb	/^module GratitudeRubyists$/;"	m
+check_mail_list	lib/mailer/mailer.rb	/^		def check_mail_list(send_mail_id)$/;"	f	class:GratitudeMail
+get_list_of_gem	lib/gratitude_rubyists/gratitude_rubyists.rb	/^  def self.get_list_of_gem(gem_file_path)$/;"	F	class:GratitudeRubyists
+send_mail	lib/mailer/mailer.rb	/^		def send_mail(author_email_id,from_id = nil)$/;"	f	class:GratitudeMail
+send_the_mail	lib/gratitude_rubyists/gratitude_rubyists.rb	/^  def self.send_the_mail$/;"	F	class:GratitudeRubyists
