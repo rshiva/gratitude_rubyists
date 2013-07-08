@@ -2,7 +2,7 @@ require "gratitude_rubyists/version"
 
 module GratitudeRubyists
   # Your code goes here...
-  @@send_mail_to_list=[]
+ 
   #@gem_file_path=File.expand_path('../Gemfile', __FILE__) || ENV['BUNDLE_GEMFILE']  ||  Dir.pwd + "/Gemfile"
   @gem_file_path =  Dir.pwd + "/Gemfile"
 

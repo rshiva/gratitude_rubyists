@@ -1,6 +1,7 @@
 class GratitudeMail < ActionMailer::Base
 
 		#To-do option to add from_id if default id is not present
+		 @@send_mail_to_id_list=[]
 
 		def send_mail(author_email_id,from_id = nil)
 			@to = author_email_id if author_email_id
