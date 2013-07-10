@@ -1,4 +1,4 @@
-require 'spec_helper'
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															require 'spec_helper'
 
 describe GratitudeRubyists do 
 	let(:gem_file_path){"/Users/shiva/github/desidime_1.0/Gemfile"}

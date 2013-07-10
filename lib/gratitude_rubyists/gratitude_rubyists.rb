@@ -1,9 +1,11 @@
 require "gratitude_rubyists/version"
+autoload :GratitudeMail , "mailer/gratitude_mail"
 
 module GratitudeRubyists
   # Your code goes here...
  
   #@gem_file_path=File.expand_path('../Gemfile', __FILE__) || ENV['BUNDLE_GEMFILE']  ||  Dir.pwd + "/Gemfile"
+
   @gem_file_path =  Dir.pwd + "/Gemfile"
 
   def self.send_the_mail
@@ -19,7 +21,7 @@ module GratitudeRubyists
 			gem_name= eval name
 			author_email_id=Gem::Specification.find_by_name(gem_name.to_s).email
 			author_name=Gem::Specification.find_by_name(gem_name).name
-			#GratitudeMail.send_mail(author_email_id)
+			GratitudeMail.send_mail(author_email_id)
 		else
 			next
 		end
