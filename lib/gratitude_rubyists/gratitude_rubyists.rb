@@ -21,7 +21,7 @@ module GratitudeRubyists
 			gem_name= eval name
 			author_email_id=Gem::Specification.find_by_name(gem_name.to_s).email
 			author_name=Gem::Specification.find_by_name(gem_name).name
-			GratitudeMail.send_mail(author_email_id)
+			GratitudeMail.add_email_to_list(author_email_id)
 		else
 			next
 		end
