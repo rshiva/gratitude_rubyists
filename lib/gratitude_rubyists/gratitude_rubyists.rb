@@ -2,11 +2,9 @@ require "gratitude_rubyists/version"
 autoload :GratitudeMail , "mailer/gratitude_mail"
 
 module GratitudeRubyists
-  # Your code goes here...
- 
-  #@gem_file_path=File.expand_path('../Gemfile', __FILE__) || ENV['BUNDLE_GEMFILE']  ||  Dir.pwd + "/Gemfile"
-
-  @gem_file_path =  Dir.pwd + "/Gemfile"
+  class MailAuthors
+  	#@gem_file_path=File.expand_path('../Gemfile', __FILE__) || ENV['BUNDLE_GEMFILE']  ||  Dir.pwd + "/Gemfile"
+  	@gem_file_path =  Dir.pwd + "/Gemfile"
 
   def self.send_the_mail
   	self.get_list_of_gem(@gem_file_path)
@@ -29,7 +27,27 @@ module GratitudeRubyists
 		end
 	end
 
+  end
 end
 
 
 #^gem (['"])(?:(?!\1).)*\1
+#{:author_email => params[:author_email],:user_email => params[:user_email],:gem_name  => params[:gem_name]}
+#curl -d '{"author_email": "Metallica", "user_email": "metallica@metalhead.com"}' -X POST -H Content-Type:application/json h//localhost:3000/api/data.json
+
+
+=begin
+EventMachine.run {
+      #http= EventMachine::HttpRequest.new("http://localhost:3000/api/data/2.json").get
+      http = EventMachine::HttpRequest.new('http://localhost:3000/api/data/').post :body => {"author_email" => "tenderlove@catworld.com", "user_email" => "supernova@space.com"}
+
+      http.errback { p 'Uh oh'; EM.stop }
+      http.callback {
+        p http.response_header.status
+        p http.response_header
+        p http.response
+
+        EventMachine.stop
+      }
+    }
+=end
