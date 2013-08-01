@@ -39,7 +39,7 @@ end
 =begin
 EventMachine.run {
       #http= EventMachine::HttpRequest.new("http://localhost:3000/api/data/2.json").get
-      http = EventMachine::HttpRequest.new('http://localhost:3000/api/data/').post :body => {"author_email" => "tenderlove@catworld.com", "user_email" => "supernova@space.com"}
+      http = EventMachine::HttpRequest.new('http://localhost:3000/api/data/').post :body => {"author_email" => "tenderlove@catworld.com", "user_email" => "supernova@s"}
 
       http.errback { p 'Uh oh'; EM.stop }
       http.callback {
