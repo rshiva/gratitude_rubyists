@@ -5,3 +5,4 @@ gemspec
 
 gem "actionmailer", "~> 4.0.0" 
 gem 'rspec'
+gem "em-http-request"
