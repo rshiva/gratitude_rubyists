@@ -7,13 +7,12 @@ module GratitudeRubyists
   	@gem_file_path =  Dir.pwd + "/Gemfile"
     @gem_details_lists=[]
 
-    def self.send_the_mail(user_email,project_name=false)
-  	  self.get_list_of_gem(@gem_file_path,user_email)
+    def self.send_the_mail(user_email,project_flag=false)
+  	  self.get_list_of_gem(@gem_file_path,user_email,project_flag)
     end
   
-    #before running do bundle install
     #Todo how to pass if gem has more than one author ??
-    def self.get_list_of_gem(gem_file_path,user_email)
+    def self.get_list_of_gem(gem_file_path,user_email,project_flag)
   		File.open(gem_file_path).read.each_line do |i|
   			i=i.split
     	  if i[0] == "gem" && i[0].start_with?("gem")
@@ -21,8 +20,8 @@ module GratitudeRubyists
     			gem_name= eval name
     			author_email_id=Gem::Specification.find_by_name(gem_name.to_s).email
     			author_name=Gem::Specification.find_by_name(gem_name).author
-          project_name="test"
-          project_name ? project_name==true : nil
+          project_name=project_flag==true ? true : nil
+          project_name="test"  if project_name  #should i send the project name ??
           @gem_details_lists << { author_email: author_email_id,
                                   author_name: author_name ,
                                   user_email: user_email , 
